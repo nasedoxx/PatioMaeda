@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ControlPatioModelStoreContainer" CdmEntityContainer="ControlPatioEntities">
+    <EntitySetMapping Name="AgenteAduanal">
+      <EntityTypeMapping TypeName="ControlPatioModel.AgenteAduanal">
+        <MappingFragment StoreEntitySet="AgenteAduanal">
+          <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+          <ScalarProperty Name="AgenteNombre" ColumnName="AgenteNombre" />
+          <ScalarProperty Name="AgentePatente" ColumnName="AgentePatente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Buque">
+      <EntityTypeMapping TypeName="ControlPatioModel.Buque">
+        <MappingFragment StoreEntitySet="Buque">
+          <ScalarProperty Name="BuqueId" ColumnName="BuqueId" />
+          <ScalarProperty Name="BuqueNombre" ColumnName="BuqueNombre" />
+          <ScalarProperty Name="BuqueNavieraId" ColumnName="BuqueNavieraId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calidad">
+      <EntityTypeMapping TypeName="ControlPatioModel.Calidad">
+        <MappingFragment StoreEntitySet="Calidad">
+          <ScalarProperty Name="CalidadId" ColumnName="CalidadId" />
+          <ScalarProperty Name="CalidadClave" ColumnName="CalidadClave" />
+          <ScalarProperty Name="CalidadDescripcion" ColumnName="CalidadDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="ControlPatioModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+          <ScalarProperty Name="ClienteNombre" ColumnName="ClienteNombre" />
+          <ScalarProperty Name="ClienteRFC" ColumnName="ClienteRFC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CodigoDaño">
+      <EntityTypeMapping TypeName="ControlPatioModel.CodigoDaño">
+        <MappingFragment StoreEntitySet="CodigoDaño">
+          <ScalarProperty Name="DañoId" ColumnName="DañoId" />
+          <ScalarProperty Name="DañoClave" ColumnName="DañoClave" />
+          <ScalarProperty Name="DañoNombre" ColumnName="DañoNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Eir">
+      <EntityTypeMapping TypeName="ControlPatioModel.Eir">
+        <MappingFragment StoreEntitySet="Eir">
+          <ScalarProperty Name="EirFolio" ColumnName="EirFolio" />
+          <ScalarProperty Name="EirIdEntradaSalida" ColumnName="EirIdEntradaSalida" />
+          <ScalarProperty Name="EirOperacion" ColumnName="EirOperacion" />
+          <ScalarProperty Name="EirContenedor" ColumnName="EirContenedor" />
+          <ScalarProperty Name="EirFechaElabora" ColumnName="EirFechaElabora" />
+          <ScalarProperty Name="EirObservaciones" ColumnName="EirObservaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Naviera">
+      <EntityTypeMapping TypeName="ControlPatioModel.Naviera">
+        <MappingFragment StoreEntitySet="Naviera">
+          <ScalarProperty Name="NavieraId" ColumnName="NavieraId" />
+          <ScalarProperty Name="NavieraNombre" ColumnName="NavieraNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PuntosB">
+      <EntityTypeMapping TypeName="ControlPatioModel.PuntosB">
+        <MappingFragment StoreEntitySet="PuntosB">
+          <ScalarProperty Name="PuntosBId" ColumnName="PuntosBId" />
+          <ScalarProperty Name="PuntosBEirId" ColumnName="PuntosBEirId" />
+          <ScalarProperty Name="PuntosBTipoDaño" ColumnName="PuntosBTipoDaño" />
+          <ScalarProperty Name="PuntosBDañoId" ColumnName="PuntosBDañoId" />
+          <ScalarProperty Name="PuntosBOrden" ColumnName="PuntosBOrden" />
+          <ScalarProperty Name="PuntosB_X" ColumnName="PuntosB_X" />
+          <ScalarProperty Name="PuntosB_Y" ColumnName="PuntosB_Y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PuntosF">
+      <EntityTypeMapping TypeName="ControlPatioModel.PuntosF">
+        <MappingFragment StoreEntitySet="PuntosF">
+          <ScalarProperty Name="PuntosFId" ColumnName="PuntosFId" />
+          <ScalarProperty Name="PuntosFEirId" ColumnName="PuntosFEirId" />
+          <ScalarProperty Name="PuntosFTipoDaño" ColumnName="PuntosFTipoDaño" />
+          <ScalarProperty Name="PuntosFDañoId" ColumnName="PuntosFDañoId" />
+          <ScalarProperty Name="PuntosFOrden" ColumnName="PuntosFOrden" />
+          <ScalarProperty Name="PuntosF_X" ColumnName="PuntosF_X" />
+          <ScalarProperty Name="PuntosF_Y" ColumnName="PuntosF_Y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PuntosV">
+      <EntityTypeMapping TypeName="ControlPatioModel.PuntosV">
+        <MappingFragment StoreEntitySet="PuntosV">
+          <ScalarProperty Name="PuntosVId" ColumnName="PuntosVId" />
+          <ScalarProperty Name="PuntosVEirId" ColumnName="PuntosVEirId" />
+          <ScalarProperty Name="PuntosVTipoDaño" ColumnName="PuntosVTipoDaño" />
+          <ScalarProperty Name="PuntosVDañoId" ColumnName="PuntosVDañoId" />
+          <ScalarProperty Name="PuntosVOrden" ColumnName="PuntosVOrden" />
+          <ScalarProperty Name="PuntosV_X" ColumnName="PuntosV_X" />
+          <ScalarProperty Name="PuntosV_Y" ColumnName="PuntosV_Y" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoContenedor">
+      <EntityTypeMapping TypeName="ControlPatioModel.TipoContenedor">
+        <MappingFragment StoreEntitySet="TipoContenedor">
+          <ScalarProperty Name="TamId" ColumnName="TamId" />
+          <ScalarProperty Name="TamDimension" ColumnName="TamDimension" />
+          <ScalarProperty Name="TamTipo" ColumnName="TamTipo" />
+          <ScalarProperty Name="TamDescripcion" ColumnName="TamDescripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Transporte">
+      <EntityTypeMapping TypeName="ControlPatioModel.Transporte">
+        <MappingFragment StoreEntitySet="Transporte">
+          <ScalarProperty Name="TransporteId" ColumnName="TransporteId" />
+          <ScalarProperty Name="TransporteNombre" ColumnName="TransporteNombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EntradaSalida">
+      <EntityTypeMapping TypeName="ControlPatioModel.EntradaSalida">
+        <MappingFragment StoreEntitySet="EntradaSalida">
+          <ScalarProperty Name="EntSalStatusSalida" ColumnName="EntSalStatusSalida" />
+          <ScalarProperty Name="EntSalStatus" ColumnName="EntSalStatus" />
+          <ScalarProperty Name="EntSalFolioEirSalida" ColumnName="EntSalFolioEirSalida" />
+          <ScalarProperty Name="EntSalSello" ColumnName="EntSalSello" />
+          <ScalarProperty Name="EntSalBooking" ColumnName="EntSalBooking" />
+          <ScalarProperty Name="EntSalTipoManDescSalida" ColumnName="EntSalTipoManDescSalida" />
+          <ScalarProperty Name="EntSalTipoManSalida" ColumnName="EntSalTipoManSalida" />
+          <ScalarProperty Name="EntSalCalidadIdSalida" ColumnName="EntSalCalidadIdSalida" />
+          <ScalarProperty Name="EntSalBuqueIdSalida" ColumnName="EntSalBuqueIdSalida" />
+          <ScalarProperty Name="EntSalOperadorSalida" ColumnName="EntSalOperadorSalida" />
+          <ScalarProperty Name="EntSalPlacasSalida" ColumnName="EntSalPlacasSalida" />
+          <ScalarProperty Name="EntSalEconomicoSalida" ColumnName="EntSalEconomicoSalida" />
+          <ScalarProperty Name="EntSalTransporteIdSalida" ColumnName="EntSalTransporteIdSalida" />
+          <ScalarProperty Name="EntSalClienteIdSalida" ColumnName="EntSalClienteIdSalida" />
+          <ScalarProperty Name="EntSalFechaSalida" ColumnName="EntSalFechaSalida" />
+          <ScalarProperty Name="EntSalFolioEirEntrada" ColumnName="EntSalFolioEirEntrada" />
+          <ScalarProperty Name="EntSalObservacionesSalida" ColumnName="EntSalObservacionesSalida" />
+          <ScalarProperty Name="EntSalObservaciones" ColumnName="EntSalObservaciones" />
+          <ScalarProperty Name="EntSalBL" ColumnName="EntSalBL" />
+          <ScalarProperty Name="EntSalTipoManDesc" ColumnName="EntSalTipoManDesc" />
+          <ScalarProperty Name="EntSalTipoMan" ColumnName="EntSalTipoMan" />
+          <ScalarProperty Name="EntSalCalidadId" ColumnName="EntSalCalidadId" />
+          <ScalarProperty Name="EntSalBuqueId" ColumnName="EntSalBuqueId" />
+          <ScalarProperty Name="EntSalOperador" ColumnName="EntSalOperador" />
+          <ScalarProperty Name="EntSalPlacas" ColumnName="EntSalPlacas" />
+          <ScalarProperty Name="EntSalEconomico" ColumnName="EntSalEconomico" />
+          <ScalarProperty Name="EntSalTransporteId" ColumnName="EntSalTransporteId" />
+          <ScalarProperty Name="EntSalClienteId" ColumnName="EntSalClienteId" />
+          <ScalarProperty Name="EntSalAgenteIdSalida" ColumnName="EntSalAgenteIdSalida" />
+          <ScalarProperty Name="EntSalAgenteId" ColumnName="EntSalAgenteId" />
+          <ScalarProperty Name="EntSalTamId" ColumnName="EntSalTamId" />
+          <ScalarProperty Name="EntSalContenedor" ColumnName="EntSalContenedor" />
+          <ScalarProperty Name="EntSalFechaIngreso" ColumnName="EntSalFechaIngreso" />
+          <ScalarProperty Name="EntSalNavieraId" ColumnName="EntSalNavieraId" />
+          <ScalarProperty Name="EntSalId" ColumnName="EntSalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

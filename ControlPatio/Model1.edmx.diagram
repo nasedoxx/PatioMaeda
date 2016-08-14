@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="7753a66fe050452aa7ab3f7e0d0a63de" Name="Diagram1">
+        <EntityTypeShape EntityType="ControlPatioModel.AgenteAduanal" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.Buque" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.Calidad" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.Cliente" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.CodigoDaño" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.Eir" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.Naviera" Width="1.5" PointX="0.625" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.PuntosB" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.PuntosF" Width="1.5" PointX="12.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.PuntosV" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.TipoContenedor" Width="1.5" PointX="3" PointY="16.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ControlPatioModel.Transporte" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <AssociationConnector Association="ControlPatioModel.FK_Buque_Naviera" ManuallyRouted="false" />
+        <AssociationConnector Association="ControlPatioModel.FK_PuntosB_CodigoDaño" ManuallyRouted="false" />
+        <AssociationConnector Association="ControlPatioModel.FK_PuntosF_CodigoDaño" ManuallyRouted="false" />
+        <AssociationConnector Association="ControlPatioModel.FK_PuntosV_CodigoDaño" ManuallyRouted="false" />
+        <AssociationConnector Association="ControlPatioModel.FK_PuntosB_Eir" ManuallyRouted="false" />
+        <AssociationConnector Association="ControlPatioModel.FK_PuntosF_Eir" ManuallyRouted="false" />
+        <AssociationConnector Association="ControlPatioModel.FK_PuntosV_Eir" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="ControlPatioModel.EntradaSalida" Width="1.5" PointX="5.25" PointY="8.125" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_AgenteAduanal" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_AgenteAduanal1" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Buque" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Buque1" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Calidad" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Calidad1" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Cliente" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Cliente1" />
+        <AssociationConnector Association="ControlPatioModel.FK_Eir_EntradaSalida" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Naviera" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_TipoContenedor" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Transporte" />
+        <AssociationConnector Association="ControlPatioModel.FK_EntradaSalida_Transporte1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

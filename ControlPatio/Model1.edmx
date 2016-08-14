@@ -1,0 +1,1226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ControlPatioModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AgenteAduanal">
+          <Key>
+            <PropertyRef Name="AgenteId" />
+          </Key>
+          <Property Name="AgenteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AgenteNombre" Type="varchar" MaxLength="50" />
+          <Property Name="AgentePatente" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Buque">
+          <Key>
+            <PropertyRef Name="BuqueId" />
+          </Key>
+          <Property Name="BuqueId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BuqueNombre" Type="varchar" MaxLength="70" />
+          <Property Name="BuqueNavieraId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Calidad">
+          <Key>
+            <PropertyRef Name="CalidadId" />
+          </Key>
+          <Property Name="CalidadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CalidadClave" Type="varchar" MaxLength="10" />
+          <Property Name="CalidadDescripcion" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ClienteId" />
+          </Key>
+          <Property Name="ClienteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClienteNombre" Type="varchar" MaxLength="100" />
+          <Property Name="ClienteRFC" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="CodigoDaño">
+          <Key>
+            <PropertyRef Name="DañoId" />
+          </Key>
+          <Property Name="DañoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DañoClave" Type="varchar" MaxLength="10" />
+          <Property Name="DañoNombre" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Eir">
+          <Key>
+            <PropertyRef Name="EirFolio" />
+          </Key>
+          <Property Name="EirFolio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EirIdEntradaSalida" Type="int" Nullable="false" />
+          <Property Name="EirOperacion" Type="tinyint" />
+          <Property Name="EirContenedor" Type="varchar" MaxLength="50" />
+          <Property Name="EirFechaElabora" Type="date" />
+          <Property Name="EirObservaciones" Type="text" />
+        </EntityType>
+        <EntityType Name="EntradaSalida">
+          <Key>
+            <PropertyRef Name="EntSalId" />
+          </Key>
+          <Property Name="EntSalId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EntSalNavieraId" Type="int" Nullable="false" />
+          <Property Name="EntSalFechaIngreso" Type="datetime" />
+          <Property Name="EntSalContenedor" Type="varchar" MaxLength="50" />
+          <Property Name="EntSalTamId" Type="int" Nullable="false" />
+          <Property Name="EntSalAgenteId" Type="int" Nullable="false" />
+          <Property Name="EntSalAgenteIdSalida" Type="int" />
+          <Property Name="EntSalClienteId" Type="int" Nullable="false" />
+          <Property Name="EntSalTransporteId" Type="int" Nullable="false" />
+          <Property Name="EntSalEconomico" Type="varchar" MaxLength="20" />
+          <Property Name="EntSalPlacas" Type="varchar" MaxLength="20" />
+          <Property Name="EntSalOperador" Type="varchar" MaxLength="100" />
+          <Property Name="EntSalBuqueId" Type="int" Nullable="false" />
+          <Property Name="EntSalCalidadId" Type="int" Nullable="false" />
+          <Property Name="EntSalTipoMan" Type="tinyint" />
+          <Property Name="EntSalTipoManDesc" Type="varchar" MaxLength="20" />
+          <Property Name="EntSalBL" Type="varchar" MaxLength="50" />
+          <Property Name="EntSalObservaciones" Type="text" />
+          <Property Name="EntSalObservacionesSalida" Type="text" />
+          <Property Name="EntSalFolioEirEntrada" Type="int" />
+          <Property Name="EntSalFechaSalida" Type="datetime" />
+          <Property Name="EntSalClienteIdSalida" Type="int" />
+          <Property Name="EntSalTransporteIdSalida" Type="int" />
+          <Property Name="EntSalEconomicoSalida" Type="varchar" MaxLength="20" />
+          <Property Name="EntSalPlacasSalida" Type="varchar" MaxLength="20" />
+          <Property Name="EntSalOperadorSalida" Type="varchar" MaxLength="100" />
+          <Property Name="EntSalBuqueIdSalida" Type="int" />
+          <Property Name="EntSalCalidadIdSalida" Type="int" />
+          <Property Name="EntSalTipoManSalida" Type="tinyint" />
+          <Property Name="EntSalTipoManDescSalida" Type="varchar" MaxLength="20" />
+          <Property Name="EntSalBooking" Type="varchar" MaxLength="50" />
+          <Property Name="EntSalSello" Type="varchar" MaxLength="50" />
+          <Property Name="EntSalFolioEirSalida" Type="int" />
+          <Property Name="EntSalStatus" Type="varchar" MaxLength="10" />
+          <Property Name="EntSalStatusSalida" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Naviera">
+          <Key>
+            <PropertyRef Name="NavieraId" />
+          </Key>
+          <Property Name="NavieraId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NavieraNombre" Type="varchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="PuntosB">
+          <Key>
+            <PropertyRef Name="PuntosBId" />
+          </Key>
+          <Property Name="PuntosBId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PuntosBEirId" Type="int" Nullable="false" />
+          <Property Name="PuntosBTipoDaño" Type="varchar" MaxLength="2" />
+          <Property Name="PuntosBDañoId" Type="int" Nullable="false" />
+          <Property Name="PuntosBOrden" Type="int" />
+          <Property Name="PuntosB_X" Type="int" />
+          <Property Name="PuntosB_Y" Type="int" />
+        </EntityType>
+        <EntityType Name="PuntosF">
+          <Key>
+            <PropertyRef Name="PuntosFId" />
+          </Key>
+          <Property Name="PuntosFId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PuntosFEirId" Type="int" Nullable="false" />
+          <Property Name="PuntosFTipoDaño" Type="varchar" MaxLength="2" />
+          <Property Name="PuntosFDañoId" Type="int" Nullable="false" />
+          <Property Name="PuntosFOrden" Type="int" />
+          <Property Name="PuntosF_X" Type="int" />
+          <Property Name="PuntosF_Y" Type="int" />
+        </EntityType>
+        <EntityType Name="PuntosV">
+          <Key>
+            <PropertyRef Name="PuntosVId" />
+          </Key>
+          <Property Name="PuntosVId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PuntosVEirId" Type="int" Nullable="false" />
+          <Property Name="PuntosVTipoDaño" Type="varchar" MaxLength="2" />
+          <Property Name="PuntosVDañoId" Type="int" Nullable="false" />
+          <Property Name="PuntosVOrden" Type="int" />
+          <Property Name="PuntosV_X" Type="int" />
+          <Property Name="PuntosV_Y" Type="int" />
+        </EntityType>
+        <EntityType Name="TipoContenedor">
+          <Key>
+            <PropertyRef Name="TamId" />
+          </Key>
+          <Property Name="TamId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TamDimension" Type="varchar" MaxLength="10" />
+          <Property Name="TamTipo" Type="varchar" MaxLength="10" />
+          <Property Name="TamDescripcion" Type="varchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="Transporte">
+          <Key>
+            <PropertyRef Name="TransporteId" />
+          </Key>
+          <Property Name="TransporteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TransporteNombre" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <Association Name="FK_Buque_Naviera">
+          <End Role="Naviera" Type="Self.Naviera" Multiplicity="1" />
+          <End Role="Buque" Type="Self.Buque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Naviera">
+              <PropertyRef Name="NavieraId" />
+            </Principal>
+            <Dependent Role="Buque">
+              <PropertyRef Name="BuqueNavieraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eir_EntradaSalida">
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="1" />
+          <End Role="Eir" Type="Self.Eir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntradaSalida">
+              <PropertyRef Name="EntSalId" />
+            </Principal>
+            <Dependent Role="Eir">
+              <PropertyRef Name="EirIdEntradaSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_AgenteAduanal">
+          <End Role="AgenteAduanal" Type="Self.AgenteAduanal" Multiplicity="1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgenteAduanal">
+              <PropertyRef Name="AgenteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalAgenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_AgenteAduanal1">
+          <End Role="AgenteAduanal" Type="Self.AgenteAduanal" Multiplicity="0..1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgenteAduanal">
+              <PropertyRef Name="AgenteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalAgenteIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Buque">
+          <End Role="Buque" Type="Self.Buque" Multiplicity="1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Buque">
+              <PropertyRef Name="BuqueId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalBuqueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Buque1">
+          <End Role="Buque" Type="Self.Buque" Multiplicity="0..1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Buque">
+              <PropertyRef Name="BuqueId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalBuqueIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Calidad">
+          <End Role="Calidad" Type="Self.Calidad" Multiplicity="1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Calidad">
+              <PropertyRef Name="CalidadId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalCalidadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Calidad1">
+          <End Role="Calidad" Type="Self.Calidad" Multiplicity="0..1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Calidad">
+              <PropertyRef Name="CalidadId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalCalidadIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Cliente">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Cliente1">
+          <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalClienteIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Naviera">
+          <End Role="Naviera" Type="Self.Naviera" Multiplicity="1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Naviera">
+              <PropertyRef Name="NavieraId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalNavieraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_TipoContenedor">
+          <End Role="TipoContenedor" Type="Self.TipoContenedor" Multiplicity="1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoContenedor">
+              <PropertyRef Name="TamId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalTamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Transporte">
+          <End Role="Transporte" Type="Self.Transporte" Multiplicity="1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transporte">
+              <PropertyRef Name="TransporteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalTransporteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Transporte1">
+          <End Role="Transporte" Type="Self.Transporte" Multiplicity="0..1" />
+          <End Role="EntradaSalida" Type="Self.EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transporte">
+              <PropertyRef Name="TransporteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalTransporteIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosB_CodigoDaño">
+          <End Role="CodigoDaño" Type="Self.CodigoDaño" Multiplicity="1" />
+          <End Role="PuntosB" Type="Self.PuntosB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoDaño">
+              <PropertyRef Name="DañoId" />
+            </Principal>
+            <Dependent Role="PuntosB">
+              <PropertyRef Name="PuntosBDañoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosB_Eir">
+          <End Role="Eir" Type="Self.Eir" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PuntosB" Type="Self.PuntosB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Eir">
+              <PropertyRef Name="EirFolio" />
+            </Principal>
+            <Dependent Role="PuntosB">
+              <PropertyRef Name="PuntosBEirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosF_CodigoDaño">
+          <End Role="CodigoDaño" Type="Self.CodigoDaño" Multiplicity="1" />
+          <End Role="PuntosF" Type="Self.PuntosF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoDaño">
+              <PropertyRef Name="DañoId" />
+            </Principal>
+            <Dependent Role="PuntosF">
+              <PropertyRef Name="PuntosFDañoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosF_Eir">
+          <End Role="Eir" Type="Self.Eir" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PuntosF" Type="Self.PuntosF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Eir">
+              <PropertyRef Name="EirFolio" />
+            </Principal>
+            <Dependent Role="PuntosF">
+              <PropertyRef Name="PuntosFEirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosV_CodigoDaño">
+          <End Role="CodigoDaño" Type="Self.CodigoDaño" Multiplicity="1" />
+          <End Role="PuntosV" Type="Self.PuntosV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoDaño">
+              <PropertyRef Name="DañoId" />
+            </Principal>
+            <Dependent Role="PuntosV">
+              <PropertyRef Name="PuntosVDañoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosV_Eir">
+          <End Role="Eir" Type="Self.Eir" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PuntosV" Type="Self.PuntosV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Eir">
+              <PropertyRef Name="EirFolio" />
+            </Principal>
+            <Dependent Role="PuntosV">
+              <PropertyRef Name="PuntosVEirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ControlPatioModelStoreContainer">
+          <EntitySet Name="AgenteAduanal" EntityType="Self.AgenteAduanal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Buque" EntityType="Self.Buque" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Calidad" EntityType="Self.Calidad" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CodigoDaño" EntityType="Self.CodigoDaño" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Eir" EntityType="Self.Eir" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EntradaSalida" EntityType="Self.EntradaSalida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Naviera" EntityType="Self.Naviera" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PuntosB" EntityType="Self.PuntosB" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PuntosF" EntityType="Self.PuntosF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PuntosV" EntityType="Self.PuntosV" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TipoContenedor" EntityType="Self.TipoContenedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Transporte" EntityType="Self.Transporte" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Buque_Naviera" Association="Self.FK_Buque_Naviera">
+            <End Role="Naviera" EntitySet="Naviera" />
+            <End Role="Buque" EntitySet="Buque" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eir_EntradaSalida" Association="Self.FK_Eir_EntradaSalida">
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+            <End Role="Eir" EntitySet="Eir" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_AgenteAduanal" Association="Self.FK_EntradaSalida_AgenteAduanal">
+            <End Role="AgenteAduanal" EntitySet="AgenteAduanal" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_AgenteAduanal1" Association="Self.FK_EntradaSalida_AgenteAduanal1">
+            <End Role="AgenteAduanal" EntitySet="AgenteAduanal" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Buque" Association="Self.FK_EntradaSalida_Buque">
+            <End Role="Buque" EntitySet="Buque" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Buque1" Association="Self.FK_EntradaSalida_Buque1">
+            <End Role="Buque" EntitySet="Buque" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Calidad" Association="Self.FK_EntradaSalida_Calidad">
+            <End Role="Calidad" EntitySet="Calidad" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Calidad1" Association="Self.FK_EntradaSalida_Calidad1">
+            <End Role="Calidad" EntitySet="Calidad" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Cliente" Association="Self.FK_EntradaSalida_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Cliente1" Association="Self.FK_EntradaSalida_Cliente1">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Naviera" Association="Self.FK_EntradaSalida_Naviera">
+            <End Role="Naviera" EntitySet="Naviera" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_TipoContenedor" Association="Self.FK_EntradaSalida_TipoContenedor">
+            <End Role="TipoContenedor" EntitySet="TipoContenedor" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Transporte" Association="Self.FK_EntradaSalida_Transporte">
+            <End Role="Transporte" EntitySet="Transporte" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Transporte1" Association="Self.FK_EntradaSalida_Transporte1">
+            <End Role="Transporte" EntitySet="Transporte" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosB_CodigoDaño" Association="Self.FK_PuntosB_CodigoDaño">
+            <End Role="CodigoDaño" EntitySet="CodigoDaño" />
+            <End Role="PuntosB" EntitySet="PuntosB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosB_Eir" Association="Self.FK_PuntosB_Eir">
+            <End Role="Eir" EntitySet="Eir" />
+            <End Role="PuntosB" EntitySet="PuntosB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosF_CodigoDaño" Association="Self.FK_PuntosF_CodigoDaño">
+            <End Role="CodigoDaño" EntitySet="CodigoDaño" />
+            <End Role="PuntosF" EntitySet="PuntosF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosF_Eir" Association="Self.FK_PuntosF_Eir">
+            <End Role="Eir" EntitySet="Eir" />
+            <End Role="PuntosF" EntitySet="PuntosF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosV_CodigoDaño" Association="Self.FK_PuntosV_CodigoDaño">
+            <End Role="CodigoDaño" EntitySet="CodigoDaño" />
+            <End Role="PuntosV" EntitySet="PuntosV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosV_Eir" Association="Self.FK_PuntosV_Eir">
+            <End Role="Eir" EntitySet="Eir" />
+            <End Role="PuntosV" EntitySet="PuntosV" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ControlPatioModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AgenteAduanal">
+          <Key>
+            <PropertyRef Name="AgenteId" />
+          </Key>
+          <Property Name="AgenteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AgenteNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AgentePatente" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EntradaSalida" Relationship="ControlPatioModel.FK_EntradaSalida_AgenteAduanal" FromRole="AgenteAduanal" ToRole="EntradaSalida" />
+          <NavigationProperty Name="EntradaSalida1" Relationship="ControlPatioModel.FK_EntradaSalida_AgenteAduanal1" FromRole="AgenteAduanal" ToRole="EntradaSalida" />
+          </EntityType>
+        <EntityType Name="Buque">
+          <Key>
+            <PropertyRef Name="BuqueId" />
+          </Key>
+          <Property Name="BuqueId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BuqueNombre" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="BuqueNavieraId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Naviera" Relationship="Self.FK_Buque_Naviera" FromRole="Buque" ToRole="Naviera" />
+          <NavigationProperty Name="EntradaSalida" Relationship="ControlPatioModel.FK_EntradaSalida_Buque" FromRole="Buque" ToRole="EntradaSalida" />
+          <NavigationProperty Name="EntradaSalida1" Relationship="ControlPatioModel.FK_EntradaSalida_Buque1" FromRole="Buque" ToRole="EntradaSalida" />
+          </EntityType>
+        <EntityType Name="Calidad">
+          <Key>
+            <PropertyRef Name="CalidadId" />
+          </Key>
+          <Property Name="CalidadId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CalidadClave" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="CalidadDescripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EntradaSalida" Relationship="ControlPatioModel.FK_EntradaSalida_Calidad" FromRole="Calidad" ToRole="EntradaSalida" />
+          <NavigationProperty Name="EntradaSalida1" Relationship="ControlPatioModel.FK_EntradaSalida_Calidad1" FromRole="Calidad" ToRole="EntradaSalida" />
+          </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="ClienteId" />
+          </Key>
+          <Property Name="ClienteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClienteNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ClienteRFC" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EntradaSalida" Relationship="ControlPatioModel.FK_EntradaSalida_Cliente" FromRole="Cliente" ToRole="EntradaSalida" />
+          <NavigationProperty Name="EntradaSalida1" Relationship="ControlPatioModel.FK_EntradaSalida_Cliente1" FromRole="Cliente" ToRole="EntradaSalida" />
+          </EntityType>
+        <EntityType Name="CodigoDaño">
+          <Key>
+            <PropertyRef Name="DañoId" />
+          </Key>
+          <Property Name="DañoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DañoClave" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DañoNombre" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PuntosB" Relationship="Self.FK_PuntosB_CodigoDaño" FromRole="CodigoDaño" ToRole="PuntosB" />
+          <NavigationProperty Name="PuntosF" Relationship="Self.FK_PuntosF_CodigoDaño" FromRole="CodigoDaño" ToRole="PuntosF" />
+          <NavigationProperty Name="PuntosV" Relationship="Self.FK_PuntosV_CodigoDaño" FromRole="CodigoDaño" ToRole="PuntosV" />
+        </EntityType>
+        <EntityType Name="Eir">
+          <Key>
+            <PropertyRef Name="EirFolio" />
+          </Key>
+          <Property Name="EirFolio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EirIdEntradaSalida" Type="Int32" Nullable="false" />
+          <Property Name="EirOperacion" Type="Byte" />
+          <Property Name="EirContenedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EirFechaElabora" Type="DateTime" Precision="0" />
+          <Property Name="EirObservaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PuntosB" Relationship="Self.FK_PuntosB_Eir" FromRole="Eir" ToRole="PuntosB" />
+          <NavigationProperty Name="PuntosF" Relationship="Self.FK_PuntosF_Eir" FromRole="Eir" ToRole="PuntosF" />
+          <NavigationProperty Name="PuntosV" Relationship="Self.FK_PuntosV_Eir" FromRole="Eir" ToRole="PuntosV" />
+          <NavigationProperty Name="EntradaSalida" Relationship="ControlPatioModel.FK_Eir_EntradaSalida" FromRole="Eir" ToRole="EntradaSalida" />
+        </EntityType>
+        <EntityType Name="Naviera">
+          <Key>
+            <PropertyRef Name="NavieraId" />
+          </Key>
+          <Property Name="NavieraId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NavieraNombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Buque" Relationship="Self.FK_Buque_Naviera" FromRole="Naviera" ToRole="Buque" />
+          <NavigationProperty Name="EntradaSalida" Relationship="ControlPatioModel.FK_EntradaSalida_Naviera" FromRole="Naviera" ToRole="EntradaSalida" />
+        </EntityType>
+        <EntityType Name="PuntosB">
+          <Key>
+            <PropertyRef Name="PuntosBId" />
+          </Key>
+          <Property Name="PuntosBId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PuntosBEirId" Type="Int32" Nullable="false" />
+          <Property Name="PuntosBTipoDaño" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PuntosBDañoId" Type="Int32" Nullable="false" />
+          <Property Name="PuntosBOrden" Type="Int32" />
+          <Property Name="PuntosB_X" Type="Int32" />
+          <Property Name="PuntosB_Y" Type="Int32" />
+          <NavigationProperty Name="CodigoDaño" Relationship="Self.FK_PuntosB_CodigoDaño" FromRole="PuntosB" ToRole="CodigoDaño" />
+          <NavigationProperty Name="Eir" Relationship="Self.FK_PuntosB_Eir" FromRole="PuntosB" ToRole="Eir" />
+        </EntityType>
+        <EntityType Name="PuntosF">
+          <Key>
+            <PropertyRef Name="PuntosFId" />
+          </Key>
+          <Property Name="PuntosFId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PuntosFEirId" Type="Int32" Nullable="false" />
+          <Property Name="PuntosFTipoDaño" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PuntosFDañoId" Type="Int32" Nullable="false" />
+          <Property Name="PuntosFOrden" Type="Int32" />
+          <Property Name="PuntosF_X" Type="Int32" />
+          <Property Name="PuntosF_Y" Type="Int32" />
+          <NavigationProperty Name="CodigoDaño" Relationship="Self.FK_PuntosF_CodigoDaño" FromRole="PuntosF" ToRole="CodigoDaño" />
+          <NavigationProperty Name="Eir" Relationship="Self.FK_PuntosF_Eir" FromRole="PuntosF" ToRole="Eir" />
+        </EntityType>
+        <EntityType Name="PuntosV">
+          <Key>
+            <PropertyRef Name="PuntosVId" />
+          </Key>
+          <Property Name="PuntosVId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PuntosVEirId" Type="Int32" Nullable="false" />
+          <Property Name="PuntosVTipoDaño" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="PuntosVDañoId" Type="Int32" Nullable="false" />
+          <Property Name="PuntosVOrden" Type="Int32" />
+          <Property Name="PuntosV_X" Type="Int32" />
+          <Property Name="PuntosV_Y" Type="Int32" />
+          <NavigationProperty Name="CodigoDaño" Relationship="Self.FK_PuntosV_CodigoDaño" FromRole="PuntosV" ToRole="CodigoDaño" />
+          <NavigationProperty Name="Eir" Relationship="Self.FK_PuntosV_Eir" FromRole="PuntosV" ToRole="Eir" />
+        </EntityType>
+        <EntityType Name="TipoContenedor">
+          <Key>
+            <PropertyRef Name="TamId" />
+          </Key>
+          <Property Name="TamId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TamDimension" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TamTipo" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="TamDescripcion" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EntradaSalida" Relationship="ControlPatioModel.FK_EntradaSalida_TipoContenedor" FromRole="TipoContenedor" ToRole="EntradaSalida" />
+        </EntityType>
+        <EntityType Name="Transporte">
+          <Key>
+            <PropertyRef Name="TransporteId" />
+          </Key>
+          <Property Name="TransporteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TransporteNombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="EntradaSalida" Relationship="ControlPatioModel.FK_EntradaSalida_Transporte" FromRole="Transporte" ToRole="EntradaSalida" />
+          <NavigationProperty Name="EntradaSalida1" Relationship="ControlPatioModel.FK_EntradaSalida_Transporte1" FromRole="Transporte" ToRole="EntradaSalida" />
+          </EntityType>
+        <Association Name="FK_Buque_Naviera">
+          <End Role="Naviera" Type="Self.Naviera" Multiplicity="1" />
+          <End Role="Buque" Type="Self.Buque" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Naviera">
+              <PropertyRef Name="NavieraId" />
+            </Principal>
+            <Dependent Role="Buque">
+              <PropertyRef Name="BuqueNavieraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosB_CodigoDaño">
+          <End Role="CodigoDaño" Type="Self.CodigoDaño" Multiplicity="1" />
+          <End Role="PuntosB" Type="Self.PuntosB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoDaño">
+              <PropertyRef Name="DañoId" />
+            </Principal>
+            <Dependent Role="PuntosB">
+              <PropertyRef Name="PuntosBDañoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosF_CodigoDaño">
+          <End Role="CodigoDaño" Type="Self.CodigoDaño" Multiplicity="1" />
+          <End Role="PuntosF" Type="Self.PuntosF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoDaño">
+              <PropertyRef Name="DañoId" />
+            </Principal>
+            <Dependent Role="PuntosF">
+              <PropertyRef Name="PuntosFDañoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosV_CodigoDaño">
+          <End Role="CodigoDaño" Type="Self.CodigoDaño" Multiplicity="1" />
+          <End Role="PuntosV" Type="Self.PuntosV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CodigoDaño">
+              <PropertyRef Name="DañoId" />
+            </Principal>
+            <Dependent Role="PuntosV">
+              <PropertyRef Name="PuntosVDañoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosB_Eir">
+          <End Role="Eir" Type="Self.Eir" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PuntosB" Type="Self.PuntosB" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Eir">
+              <PropertyRef Name="EirFolio" />
+            </Principal>
+            <Dependent Role="PuntosB">
+              <PropertyRef Name="PuntosBEirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosF_Eir">
+          <End Role="Eir" Type="Self.Eir" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PuntosF" Type="Self.PuntosF" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Eir">
+              <PropertyRef Name="EirFolio" />
+            </Principal>
+            <Dependent Role="PuntosF">
+              <PropertyRef Name="PuntosFEirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PuntosV_Eir">
+          <End Role="Eir" Type="Self.Eir" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PuntosV" Type="Self.PuntosV" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Eir">
+              <PropertyRef Name="EirFolio" />
+            </Principal>
+            <Dependent Role="PuntosV">
+              <PropertyRef Name="PuntosVEirId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ControlPatioEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AgenteAduanal" EntityType="Self.AgenteAduanal" />
+          <EntitySet Name="Buque" EntityType="Self.Buque" />
+          <EntitySet Name="Calidad" EntityType="Self.Calidad" />
+          <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="CodigoDaño" EntityType="Self.CodigoDaño" />
+          <EntitySet Name="Eir" EntityType="Self.Eir" />
+          <EntitySet Name="Naviera" EntityType="Self.Naviera" />
+          <EntitySet Name="PuntosB" EntityType="Self.PuntosB" />
+          <EntitySet Name="PuntosF" EntityType="Self.PuntosF" />
+          <EntitySet Name="PuntosV" EntityType="Self.PuntosV" />
+          <EntitySet Name="TipoContenedor" EntityType="Self.TipoContenedor" />
+          <EntitySet Name="Transporte" EntityType="Self.Transporte" />
+          <AssociationSet Name="FK_Buque_Naviera" Association="Self.FK_Buque_Naviera">
+            <End Role="Naviera" EntitySet="Naviera" />
+            <End Role="Buque" EntitySet="Buque" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosB_CodigoDaño" Association="Self.FK_PuntosB_CodigoDaño">
+            <End Role="CodigoDaño" EntitySet="CodigoDaño" />
+            <End Role="PuntosB" EntitySet="PuntosB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosF_CodigoDaño" Association="Self.FK_PuntosF_CodigoDaño">
+            <End Role="CodigoDaño" EntitySet="CodigoDaño" />
+            <End Role="PuntosF" EntitySet="PuntosF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosV_CodigoDaño" Association="Self.FK_PuntosV_CodigoDaño">
+            <End Role="CodigoDaño" EntitySet="CodigoDaño" />
+            <End Role="PuntosV" EntitySet="PuntosV" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosB_Eir" Association="Self.FK_PuntosB_Eir">
+            <End Role="Eir" EntitySet="Eir" />
+            <End Role="PuntosB" EntitySet="PuntosB" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosF_Eir" Association="Self.FK_PuntosF_Eir">
+            <End Role="Eir" EntitySet="Eir" />
+            <End Role="PuntosF" EntitySet="PuntosF" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PuntosV_Eir" Association="Self.FK_PuntosV_Eir">
+            <End Role="Eir" EntitySet="Eir" />
+            <End Role="PuntosV" EntitySet="PuntosV" />
+          </AssociationSet>
+          <EntitySet Name="EntradaSalida" EntityType="ControlPatioModel.EntradaSalida" />
+          <AssociationSet Name="FK_EntradaSalida_AgenteAduanal" Association="ControlPatioModel.FK_EntradaSalida_AgenteAduanal">
+            <End Role="AgenteAduanal" EntitySet="AgenteAduanal" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_AgenteAduanal1" Association="ControlPatioModel.FK_EntradaSalida_AgenteAduanal1">
+            <End Role="AgenteAduanal" EntitySet="AgenteAduanal" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Buque" Association="ControlPatioModel.FK_EntradaSalida_Buque">
+            <End Role="Buque" EntitySet="Buque" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Buque1" Association="ControlPatioModel.FK_EntradaSalida_Buque1">
+            <End Role="Buque" EntitySet="Buque" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Calidad" Association="ControlPatioModel.FK_EntradaSalida_Calidad">
+            <End Role="Calidad" EntitySet="Calidad" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Calidad1" Association="ControlPatioModel.FK_EntradaSalida_Calidad1">
+            <End Role="Calidad" EntitySet="Calidad" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Cliente" Association="ControlPatioModel.FK_EntradaSalida_Cliente">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Cliente1" Association="ControlPatioModel.FK_EntradaSalida_Cliente1">
+            <End Role="Cliente" EntitySet="Cliente" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Eir_EntradaSalida" Association="ControlPatioModel.FK_Eir_EntradaSalida">
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+            <End Role="Eir" EntitySet="Eir" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Naviera" Association="ControlPatioModel.FK_EntradaSalida_Naviera">
+            <End Role="Naviera" EntitySet="Naviera" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_TipoContenedor" Association="ControlPatioModel.FK_EntradaSalida_TipoContenedor">
+            <End Role="TipoContenedor" EntitySet="TipoContenedor" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Transporte" Association="ControlPatioModel.FK_EntradaSalida_Transporte">
+            <End Role="Transporte" EntitySet="Transporte" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntradaSalida_Transporte1" Association="ControlPatioModel.FK_EntradaSalida_Transporte1">
+            <End Role="Transporte" EntitySet="Transporte" />
+            <End Role="EntradaSalida" EntitySet="EntradaSalida" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="EntradaSalida">
+          <Key>
+            <PropertyRef Name="EntSalId" />
+          </Key>
+          <Property Name="EntSalId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EntSalNavieraId" Type="Int32" Nullable="false" />
+          <Property Name="EntSalFechaIngreso" Type="DateTime" Precision="3" />
+          <Property Name="EntSalContenedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalTamId" Type="Int32" Nullable="false" />
+          <Property Name="EntSalAgenteId" Type="Int32" Nullable="false" />
+          <Property Name="EntSalAgenteIdSalida" Type="Int32" />
+          <Property Name="EntSalClienteId" Type="Int32" Nullable="false" />
+          <Property Name="EntSalTransporteId" Type="Int32" Nullable="false" />
+          <Property Name="EntSalEconomico" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalPlacas" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalOperador" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalBuqueId" Type="Int32" Nullable="false" />
+          <Property Name="EntSalCalidadId" Type="Int32" Nullable="false" />
+          <Property Name="EntSalTipoMan" Type="Byte" />
+          <Property Name="EntSalTipoManDesc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalBL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalObservaciones" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalObservacionesSalida" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalFolioEirEntrada" Type="Int32" />
+          <Property Name="EntSalFechaSalida" Type="DateTime" Precision="3" />
+          <Property Name="EntSalClienteIdSalida" Type="Int32" />
+          <Property Name="EntSalTransporteIdSalida" Type="Int32" />
+          <Property Name="EntSalEconomicoSalida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalPlacasSalida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalOperadorSalida" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalBuqueIdSalida" Type="Int32" />
+          <Property Name="EntSalCalidadIdSalida" Type="Int32" />
+          <Property Name="EntSalTipoManSalida" Type="Byte" />
+          <Property Name="EntSalTipoManDescSalida" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalBooking" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalSello" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalFolioEirSalida" Type="Int32" />
+          <Property Name="EntSalStatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="EntSalStatusSalida" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="AgenteAduanal" Relationship="ControlPatioModel.FK_EntradaSalida_AgenteAduanal" FromRole="EntradaSalida" ToRole="AgenteAduanal" />
+          <NavigationProperty Name="AgenteAduanal1" Relationship="ControlPatioModel.FK_EntradaSalida_AgenteAduanal1" FromRole="EntradaSalida" ToRole="AgenteAduanal" />
+          <NavigationProperty Name="Buque" Relationship="ControlPatioModel.FK_EntradaSalida_Buque" FromRole="EntradaSalida" ToRole="Buque" />
+          <NavigationProperty Name="Buque1" Relationship="ControlPatioModel.FK_EntradaSalida_Buque1" FromRole="EntradaSalida" ToRole="Buque" />
+          <NavigationProperty Name="Calidad" Relationship="ControlPatioModel.FK_EntradaSalida_Calidad" FromRole="EntradaSalida" ToRole="Calidad" />
+          <NavigationProperty Name="Calidad1" Relationship="ControlPatioModel.FK_EntradaSalida_Calidad1" FromRole="EntradaSalida" ToRole="Calidad" />
+          <NavigationProperty Name="Cliente" Relationship="ControlPatioModel.FK_EntradaSalida_Cliente" FromRole="EntradaSalida" ToRole="Cliente" />
+          <NavigationProperty Name="Cliente1" Relationship="ControlPatioModel.FK_EntradaSalida_Cliente1" FromRole="EntradaSalida" ToRole="Cliente" />
+          <NavigationProperty Name="Eir" Relationship="ControlPatioModel.FK_Eir_EntradaSalida" FromRole="EntradaSalida" ToRole="Eir" />
+          <NavigationProperty Name="Naviera" Relationship="ControlPatioModel.FK_EntradaSalida_Naviera" FromRole="EntradaSalida" ToRole="Naviera" />
+          <NavigationProperty Name="TipoContenedor" Relationship="ControlPatioModel.FK_EntradaSalida_TipoContenedor" FromRole="EntradaSalida" ToRole="TipoContenedor" />
+          <NavigationProperty Name="Transporte" Relationship="ControlPatioModel.FK_EntradaSalida_Transporte" FromRole="EntradaSalida" ToRole="Transporte" />
+          <NavigationProperty Name="Transporte1" Relationship="ControlPatioModel.FK_EntradaSalida_Transporte1" FromRole="EntradaSalida" ToRole="Transporte" />
+        </EntityType>
+        <Association Name="FK_EntradaSalida_AgenteAduanal">
+          <End Type="ControlPatioModel.AgenteAduanal" Role="AgenteAduanal" Multiplicity="1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgenteAduanal">
+              <PropertyRef Name="AgenteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalAgenteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_AgenteAduanal1">
+          <End Type="ControlPatioModel.AgenteAduanal" Role="AgenteAduanal" Multiplicity="0..1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AgenteAduanal">
+              <PropertyRef Name="AgenteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalAgenteIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Buque">
+          <End Type="ControlPatioModel.Buque" Role="Buque" Multiplicity="1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Buque">
+              <PropertyRef Name="BuqueId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalBuqueId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Buque1">
+          <End Type="ControlPatioModel.Buque" Role="Buque" Multiplicity="0..1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Buque">
+              <PropertyRef Name="BuqueId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalBuqueIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Calidad">
+          <End Type="ControlPatioModel.Calidad" Role="Calidad" Multiplicity="1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Calidad">
+              <PropertyRef Name="CalidadId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalCalidadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Calidad1">
+          <End Type="ControlPatioModel.Calidad" Role="Calidad" Multiplicity="0..1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Calidad">
+              <PropertyRef Name="CalidadId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalCalidadIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Cliente">
+          <End Type="ControlPatioModel.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalClienteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Cliente1">
+          <End Type="ControlPatioModel.Cliente" Role="Cliente" Multiplicity="0..1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="ClienteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalClienteIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Eir_EntradaSalida">
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="1" />
+          <End Type="ControlPatioModel.Eir" Role="Eir" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EntradaSalida">
+              <PropertyRef Name="EntSalId" />
+            </Principal>
+            <Dependent Role="Eir">
+              <PropertyRef Name="EirIdEntradaSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Naviera">
+          <End Type="ControlPatioModel.Naviera" Role="Naviera" Multiplicity="1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Naviera">
+              <PropertyRef Name="NavieraId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalNavieraId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_TipoContenedor">
+          <End Type="ControlPatioModel.TipoContenedor" Role="TipoContenedor" Multiplicity="1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoContenedor">
+              <PropertyRef Name="TamId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalTamId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Transporte">
+          <End Type="ControlPatioModel.Transporte" Role="Transporte" Multiplicity="1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transporte">
+              <PropertyRef Name="TransporteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalTransporteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntradaSalida_Transporte1">
+          <End Type="ControlPatioModel.Transporte" Role="Transporte" Multiplicity="0..1" />
+          <End Type="ControlPatioModel.EntradaSalida" Role="EntradaSalida" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Transporte">
+              <PropertyRef Name="TransporteId" />
+            </Principal>
+            <Dependent Role="EntradaSalida">
+              <PropertyRef Name="EntSalTransporteIdSalida" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ControlPatioModelStoreContainer" CdmEntityContainer="ControlPatioEntities">
+          <EntitySetMapping Name="AgenteAduanal">
+            <EntityTypeMapping TypeName="ControlPatioModel.AgenteAduanal">
+              <MappingFragment StoreEntitySet="AgenteAduanal">
+                <ScalarProperty Name="AgenteId" ColumnName="AgenteId" />
+                <ScalarProperty Name="AgenteNombre" ColumnName="AgenteNombre" />
+                <ScalarProperty Name="AgentePatente" ColumnName="AgentePatente" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buque">
+            <EntityTypeMapping TypeName="ControlPatioModel.Buque">
+              <MappingFragment StoreEntitySet="Buque">
+                <ScalarProperty Name="BuqueId" ColumnName="BuqueId" />
+                <ScalarProperty Name="BuqueNombre" ColumnName="BuqueNombre" />
+                <ScalarProperty Name="BuqueNavieraId" ColumnName="BuqueNavieraId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Calidad">
+            <EntityTypeMapping TypeName="ControlPatioModel.Calidad">
+              <MappingFragment StoreEntitySet="Calidad">
+                <ScalarProperty Name="CalidadId" ColumnName="CalidadId" />
+                <ScalarProperty Name="CalidadClave" ColumnName="CalidadClave" />
+                <ScalarProperty Name="CalidadDescripcion" ColumnName="CalidadDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cliente">
+            <EntityTypeMapping TypeName="ControlPatioModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="ClienteId" ColumnName="ClienteId" />
+                <ScalarProperty Name="ClienteNombre" ColumnName="ClienteNombre" />
+                <ScalarProperty Name="ClienteRFC" ColumnName="ClienteRFC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CodigoDaño">
+            <EntityTypeMapping TypeName="ControlPatioModel.CodigoDaño">
+              <MappingFragment StoreEntitySet="CodigoDaño">
+                <ScalarProperty Name="DañoId" ColumnName="DañoId" />
+                <ScalarProperty Name="DañoClave" ColumnName="DañoClave" />
+                <ScalarProperty Name="DañoNombre" ColumnName="DañoNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Eir">
+            <EntityTypeMapping TypeName="ControlPatioModel.Eir">
+              <MappingFragment StoreEntitySet="Eir">
+                <ScalarProperty Name="EirFolio" ColumnName="EirFolio" />
+                <ScalarProperty Name="EirIdEntradaSalida" ColumnName="EirIdEntradaSalida" />
+                <ScalarProperty Name="EirOperacion" ColumnName="EirOperacion" />
+                <ScalarProperty Name="EirContenedor" ColumnName="EirContenedor" />
+                <ScalarProperty Name="EirFechaElabora" ColumnName="EirFechaElabora" />
+                <ScalarProperty Name="EirObservaciones" ColumnName="EirObservaciones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Naviera">
+            <EntityTypeMapping TypeName="ControlPatioModel.Naviera">
+              <MappingFragment StoreEntitySet="Naviera">
+                <ScalarProperty Name="NavieraId" ColumnName="NavieraId" />
+                <ScalarProperty Name="NavieraNombre" ColumnName="NavieraNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PuntosB">
+            <EntityTypeMapping TypeName="ControlPatioModel.PuntosB">
+              <MappingFragment StoreEntitySet="PuntosB">
+                <ScalarProperty Name="PuntosBId" ColumnName="PuntosBId" />
+                <ScalarProperty Name="PuntosBEirId" ColumnName="PuntosBEirId" />
+                <ScalarProperty Name="PuntosBTipoDaño" ColumnName="PuntosBTipoDaño" />
+                <ScalarProperty Name="PuntosBDañoId" ColumnName="PuntosBDañoId" />
+                <ScalarProperty Name="PuntosBOrden" ColumnName="PuntosBOrden" />
+                <ScalarProperty Name="PuntosB_X" ColumnName="PuntosB_X" />
+                <ScalarProperty Name="PuntosB_Y" ColumnName="PuntosB_Y" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PuntosF">
+            <EntityTypeMapping TypeName="ControlPatioModel.PuntosF">
+              <MappingFragment StoreEntitySet="PuntosF">
+                <ScalarProperty Name="PuntosFId" ColumnName="PuntosFId" />
+                <ScalarProperty Name="PuntosFEirId" ColumnName="PuntosFEirId" />
+                <ScalarProperty Name="PuntosFTipoDaño" ColumnName="PuntosFTipoDaño" />
+                <ScalarProperty Name="PuntosFDañoId" ColumnName="PuntosFDañoId" />
+                <ScalarProperty Name="PuntosFOrden" ColumnName="PuntosFOrden" />
+                <ScalarProperty Name="PuntosF_X" ColumnName="PuntosF_X" />
+                <ScalarProperty Name="PuntosF_Y" ColumnName="PuntosF_Y" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PuntosV">
+            <EntityTypeMapping TypeName="ControlPatioModel.PuntosV">
+              <MappingFragment StoreEntitySet="PuntosV">
+                <ScalarProperty Name="PuntosVId" ColumnName="PuntosVId" />
+                <ScalarProperty Name="PuntosVEirId" ColumnName="PuntosVEirId" />
+                <ScalarProperty Name="PuntosVTipoDaño" ColumnName="PuntosVTipoDaño" />
+                <ScalarProperty Name="PuntosVDañoId" ColumnName="PuntosVDañoId" />
+                <ScalarProperty Name="PuntosVOrden" ColumnName="PuntosVOrden" />
+                <ScalarProperty Name="PuntosV_X" ColumnName="PuntosV_X" />
+                <ScalarProperty Name="PuntosV_Y" ColumnName="PuntosV_Y" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TipoContenedor">
+            <EntityTypeMapping TypeName="ControlPatioModel.TipoContenedor">
+              <MappingFragment StoreEntitySet="TipoContenedor">
+                <ScalarProperty Name="TamId" ColumnName="TamId" />
+                <ScalarProperty Name="TamDimension" ColumnName="TamDimension" />
+                <ScalarProperty Name="TamTipo" ColumnName="TamTipo" />
+                <ScalarProperty Name="TamDescripcion" ColumnName="TamDescripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Transporte">
+            <EntityTypeMapping TypeName="ControlPatioModel.Transporte">
+              <MappingFragment StoreEntitySet="Transporte">
+                <ScalarProperty Name="TransporteId" ColumnName="TransporteId" />
+                <ScalarProperty Name="TransporteNombre" ColumnName="TransporteNombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EntradaSalida">
+            <EntityTypeMapping TypeName="ControlPatioModel.EntradaSalida">
+              <MappingFragment StoreEntitySet="EntradaSalida">
+                <ScalarProperty Name="EntSalStatusSalida" ColumnName="EntSalStatusSalida" />
+                <ScalarProperty Name="EntSalStatus" ColumnName="EntSalStatus" />
+                <ScalarProperty Name="EntSalFolioEirSalida" ColumnName="EntSalFolioEirSalida" />
+                <ScalarProperty Name="EntSalSello" ColumnName="EntSalSello" />
+                <ScalarProperty Name="EntSalBooking" ColumnName="EntSalBooking" />
+                <ScalarProperty Name="EntSalTipoManDescSalida" ColumnName="EntSalTipoManDescSalida" />
+                <ScalarProperty Name="EntSalTipoManSalida" ColumnName="EntSalTipoManSalida" />
+                <ScalarProperty Name="EntSalCalidadIdSalida" ColumnName="EntSalCalidadIdSalida" />
+                <ScalarProperty Name="EntSalBuqueIdSalida" ColumnName="EntSalBuqueIdSalida" />
+                <ScalarProperty Name="EntSalOperadorSalida" ColumnName="EntSalOperadorSalida" />
+                <ScalarProperty Name="EntSalPlacasSalida" ColumnName="EntSalPlacasSalida" />
+                <ScalarProperty Name="EntSalEconomicoSalida" ColumnName="EntSalEconomicoSalida" />
+                <ScalarProperty Name="EntSalTransporteIdSalida" ColumnName="EntSalTransporteIdSalida" />
+                <ScalarProperty Name="EntSalClienteIdSalida" ColumnName="EntSalClienteIdSalida" />
+                <ScalarProperty Name="EntSalFechaSalida" ColumnName="EntSalFechaSalida" />
+                <ScalarProperty Name="EntSalFolioEirEntrada" ColumnName="EntSalFolioEirEntrada" />
+                <ScalarProperty Name="EntSalObservacionesSalida" ColumnName="EntSalObservacionesSalida" />
+                <ScalarProperty Name="EntSalObservaciones" ColumnName="EntSalObservaciones" />
+                <ScalarProperty Name="EntSalBL" ColumnName="EntSalBL" />
+                <ScalarProperty Name="EntSalTipoManDesc" ColumnName="EntSalTipoManDesc" />
+                <ScalarProperty Name="EntSalTipoMan" ColumnName="EntSalTipoMan" />
+                <ScalarProperty Name="EntSalCalidadId" ColumnName="EntSalCalidadId" />
+                <ScalarProperty Name="EntSalBuqueId" ColumnName="EntSalBuqueId" />
+                <ScalarProperty Name="EntSalOperador" ColumnName="EntSalOperador" />
+                <ScalarProperty Name="EntSalPlacas" ColumnName="EntSalPlacas" />
+                <ScalarProperty Name="EntSalEconomico" ColumnName="EntSalEconomico" />
+                <ScalarProperty Name="EntSalTransporteId" ColumnName="EntSalTransporteId" />
+                <ScalarProperty Name="EntSalClienteId" ColumnName="EntSalClienteId" />
+                <ScalarProperty Name="EntSalAgenteIdSalida" ColumnName="EntSalAgenteIdSalida" />
+                <ScalarProperty Name="EntSalAgenteId" ColumnName="EntSalAgenteId" />
+                <ScalarProperty Name="EntSalTamId" ColumnName="EntSalTamId" />
+                <ScalarProperty Name="EntSalContenedor" ColumnName="EntSalContenedor" />
+                <ScalarProperty Name="EntSalFechaIngreso" ColumnName="EntSalFechaIngreso" />
+                <ScalarProperty Name="EntSalNavieraId" ColumnName="EntSalNavieraId" />
+                <ScalarProperty Name="EntSalId" ColumnName="EntSalId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

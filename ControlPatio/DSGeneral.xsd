@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DSGeneral" targetNamespace="http://tempuri.org/DSGeneral.xsd" xmlns:mstns="http://tempuri.org/DSGeneral.xsd" xmlns="http://tempuri.org/DSGeneral.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DSGeneral" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DSGeneral" msprop:Generator_UserDSName="DSGeneral">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tbVacios" msprop:Generator_TableClassName="tbVaciosDataTable" msprop:Generator_TableVarName="tabletbVacios" msprop:Generator_TablePropName="tbVacios" msprop:Generator_RowDeletingName="tbVaciosRowDeleting" msprop:Generator_RowChangingName="tbVaciosRowChanging" msprop:Generator_RowEvHandlerName="tbVaciosRowChangeEventHandler" msprop:Generator_RowDeletedName="tbVaciosRowDeleted" msprop:Generator_UserTableName="tbVacios" msprop:Generator_RowChangedName="tbVaciosRowChanged" msprop:Generator_RowEvArgName="tbVaciosRowChangeEvent" msprop:Generator_RowClassName="tbVaciosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
+              <xs:element name="CveDaño" msprop:Generator_ColumnVarNameInTable="columnCveDaño" msprop:Generator_ColumnPropNameInRow="CveDaño" msprop:Generator_ColumnPropNameInTable="CveDañoColumn" msprop:Generator_UserColumnName="CveDaño" type="xs:string" minOccurs="0" />
+              <xs:element name="O" msprop:Generator_ColumnVarNameInTable="columnO" msprop:Generator_ColumnPropNameInRow="O" msprop:Generator_ColumnPropNameInTable="OColumn" msprop:Generator_UserColumnName="O" type="xs:string" minOccurs="0" />
+              <xs:element name="U" msprop:Generator_ColumnVarNameInTable="columnU" msprop:Generator_ColumnPropNameInRow="U" msprop:Generator_ColumnPropNameInTable="UColumn" msprop:Generator_UserColumnName="U" type="xs:string" minOccurs="0" />
+              <xs:element name="R" msprop:Generator_ColumnVarNameInTable="columnR" msprop:Generator_ColumnPropNameInRow="R" msprop:Generator_ColumnPropNameInTable="RColumn" msprop:Generator_UserColumnName="R" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbBack" msprop:Generator_TableClassName="tbBackDataTable" msprop:Generator_TableVarName="tabletbBack" msprop:Generator_TablePropName="tbBack" msprop:Generator_RowDeletingName="tbBackRowDeleting" msprop:Generator_RowChangingName="tbBackRowChanging" msprop:Generator_RowEvHandlerName="tbBackRowChangeEventHandler" msprop:Generator_RowDeletedName="tbBackRowDeleted" msprop:Generator_UserTableName="tbBack" msprop:Generator_RowChangedName="tbBackRowChanged" msprop:Generator_RowEvArgName="tbBackRowChangeEvent" msprop:Generator_RowClassName="tbBackRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
+              <xs:element name="CveDaño" msprop:Generator_ColumnVarNameInTable="columnCveDaño" msprop:Generator_ColumnPropNameInRow="CveDaño" msprop:Generator_ColumnPropNameInTable="CveDañoColumn" msprop:Generator_UserColumnName="CveDaño" type="xs:string" minOccurs="0" />
+              <xs:element name="O" msprop:Generator_ColumnVarNameInTable="columnO" msprop:Generator_ColumnPropNameInRow="O" msprop:Generator_ColumnPropNameInTable="OColumn" msprop:Generator_UserColumnName="O" type="xs:string" minOccurs="0" />
+              <xs:element name="U" msprop:Generator_ColumnVarNameInTable="columnU" msprop:Generator_ColumnPropNameInRow="U" msprop:Generator_ColumnPropNameInTable="UColumn" msprop:Generator_UserColumnName="U" type="xs:string" minOccurs="0" />
+              <xs:element name="R" msprop:Generator_ColumnVarNameInTable="columnR" msprop:Generator_ColumnPropNameInRow="R" msprop:Generator_ColumnPropNameInTable="RColumn" msprop:Generator_UserColumnName="R" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbFront" msprop:Generator_TableClassName="tbFrontDataTable" msprop:Generator_TableVarName="tabletbFront" msprop:Generator_TablePropName="tbFront" msprop:Generator_RowDeletingName="tbFrontRowDeleting" msprop:Generator_RowChangingName="tbFrontRowChanging" msprop:Generator_RowEvHandlerName="tbFrontRowChangeEventHandler" msprop:Generator_RowDeletedName="tbFrontRowDeleted" msprop:Generator_UserTableName="tbFront" msprop:Generator_RowChangedName="tbFrontRowChanged" msprop:Generator_RowEvArgName="tbFrontRowChangeEvent" msprop:Generator_RowClassName="tbFrontRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
+              <xs:element name="CveDaño" msprop:Generator_ColumnVarNameInTable="columnCveDaño" msprop:Generator_ColumnPropNameInRow="CveDaño" msprop:Generator_ColumnPropNameInTable="CveDañoColumn" msprop:Generator_UserColumnName="CveDaño" type="xs:string" minOccurs="0" />
+              <xs:element name="O" msprop:Generator_ColumnVarNameInTable="columnO" msprop:Generator_ColumnPropNameInRow="O" msprop:Generator_ColumnPropNameInTable="OColumn" msprop:Generator_UserColumnName="O" type="xs:string" minOccurs="0" />
+              <xs:element name="U" msprop:Generator_ColumnVarNameInTable="columnU" msprop:Generator_ColumnPropNameInRow="U" msprop:Generator_ColumnPropNameInTable="UColumn" msprop:Generator_UserColumnName="U" type="xs:string" minOccurs="0" />
+              <xs:element name="R" msprop:Generator_ColumnVarNameInTable="columnR" msprop:Generator_ColumnPropNameInRow="R" msprop:Generator_ColumnPropNameInTable="RColumn" msprop:Generator_UserColumnName="R" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="tbVacioKey1">
+      <xs:selector xpath=".//mstns:tbVacios" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="tbBack_tbVacioKey1" msdata:ConstraintName="tbVacioKey1">
+      <xs:selector xpath=".//mstns:tbBack" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="tbFront_tbVacioKey1" msdata:ConstraintName="tbVacioKey1">
+      <xs:selector xpath=".//mstns:tbFront" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
